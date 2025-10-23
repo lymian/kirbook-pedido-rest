@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://kirbook.com/auth"
+           xmlns="http://kirbook.com/auth"
+           elementFormDefault="qualified">
+
+    <!-- ==== LOGIN ==== -->
+    <xs:element name="LoginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LoginResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+                <xs:element name="token" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==== SIGNUP ==== -->
+    <xs:element name="SignupRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="apellido" type="xs:string"/>
+                <xs:element name="telefono" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SignupResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- ==== VALIDAR TOKEN ==== -->
+    <xs:element name="ValidateTokenRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="token" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ValidateTokenResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="valid" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+                <xs:element name="id" type="xs:long" minOccurs="0"/>
+                <xs:element name="username" type="xs:string" minOccurs="0"/>
+                <xs:element name="email" type="xs:string" minOccurs="0"/>
+                <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+            	<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+                <xs:element name="rol" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="GetUserByIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetUserByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="exists" type="xs:boolean" />
+				<xs:element name="id" type="xs:long" minOccurs="0" />
+				<xs:element name="username" type="xs:string" minOccurs="0" />
+				<xs:element name="email" type="xs:string" minOccurs="0" />
+				<xs:element name="rol" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
