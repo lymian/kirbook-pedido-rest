@@ -21,7 +21,6 @@ public class AuthClient extends WebServiceGatewaySupport {
         return (ValidateTokenResponse) resp;
     }
     
- // ✅ Nuevo método para obtener usuario por ID
     public GetUserByIdResponse getUserById(Long id) {
         GetUserByIdRequest req = new GetUserByIdRequest();
         req.setId(id);

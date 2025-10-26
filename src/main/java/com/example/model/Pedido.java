@@ -22,9 +22,8 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    private int clienteId; // viene del proyecto auth
-    private String estado;  // "pendiente" o "finalizado"
+    private int clienteId;
+    private String estado;
     private LocalDateTime fecha;
     private Double total;
 

@@ -10,6 +10,12 @@ import lombok.NoArgsConstructor;
 public class LibroDTO {
     private int id;
     private String titulo;
+    private String sinopsis;
+    private String autor;
+    private String categoria;
+    private String fechaPublicacion;
     private double precio;
+    private double descuento;
     private int stock;
+    private boolean estado;
 }

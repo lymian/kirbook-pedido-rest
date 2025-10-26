@@ -20,7 +20,7 @@ public class DetallePedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int libroId; // viene del proyecto libro
+    private int libroId;
     private int cantidad;
     private Double precioUnitario;
 
